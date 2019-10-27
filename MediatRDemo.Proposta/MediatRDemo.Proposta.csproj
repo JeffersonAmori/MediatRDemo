@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediatRDemo.Core\MediatRDemo.Core.csproj" />
+    <ProjectReference Include="..\MediatRDemo.DML\MediatRDemo.DML.csproj" />
+    <ProjectReference Include="..\MediatRDemo.Interfaces\MediatRDemo.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
