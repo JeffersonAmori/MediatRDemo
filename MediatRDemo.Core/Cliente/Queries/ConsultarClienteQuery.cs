@@ -1,5 +1,8 @@
-﻿using MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using MediatR;
 using MediatRDemo.Core.Interfaces;
+using MediatRDemo.DML;
 
 namespace MediatRDemo.Core.Commands.Cliente.Queries
 {
@@ -12,18 +15,18 @@ namespace MediatRDemo.Core.Commands.Cliente.Queries
 
         public string CodigoCliente { get; private set; }
 
-        public class ConsultarClienteQueryHandler : RequestHandler<ConsultarClienteQuery, DML.Cliente>
+        public class Handler : IRequestHandler<ConsultarClienteQuery, DML.Cliente>
         {
             private IBoCliente _boCliente;
 
-            public ConsultarClienteQueryHandler(IBoCliente boCliente)
+            public Handler(IBoCliente boCliente)
             {
                 _boCliente = boCliente;
             }
 
-            protected override DML.Cliente Handle(ConsultarClienteQuery request)
+            public Task<DML.Cliente> Handle(ConsultarClienteQuery request, CancellationToken cancellationToken)
             {
-                return _boCliente.ConsultarCliente(request.CodigoCliente);
+                return Task.FromResult(_boCliente.ConsultarCliente(request.CodigoCliente));
             }
         }
     }

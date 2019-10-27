@@ -1,4 +1,6 @@
-﻿using MediatRDemo.Core.Interfaces;
+﻿using MediatR;
+using MediatRDemo.Core.Commands.Cliente.Queries;
+using MediatRDemo.Core.Interfaces;
 using MediatRDemo.DML;
 using System;
 
@@ -6,26 +8,27 @@ namespace MediatRDemo.Proposta
 {
     public class BoProposta : IBoProposta
     {
-        private IBoCliente _boCliente;
+        private readonly IDispatcherProposta _dispatcherProposta;
+        private readonly IMediator _mediator;
 
-        public BoProposta(IBoCliente boCliente)
+        public BoProposta(IDispatcherProposta dispatcherProposta, IMediator mediator)
         {
-            _boCliente = boCliente;
+            _dispatcherProposta = dispatcherProposta;
+            _mediator = mediator;
         }
 
         public DML.Proposta ConsultarProposta(string numeroProposta)
         {
-            return new DML.Proposta()
-            {
-                Cliente = new Cliente(),
-                DataBase = DateTime.Now,
-                NumeroProposta = "0000004484"
-            };
+            var proposta = _dispatcherProposta.ConsultarProposta(numeroProposta);
+            proposta.Cliente = _mediator.Send(new ConsultarClienteQuery("000001")).Result;
+
+            return proposta;
+            
         }
 
         public void CadastrarProposta(DML.Proposta proposta)
         {
-            throw new NotImplementedException();
+            _dispatcherProposta.CadastrarProposta(proposta);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace MediatRDemo.Core.Interfaces
 {
     public interface IBoCliente
     {
-        void InserirCliente(Cliente cliente);
-        Cliente ConsultarCliente(string codigoCliente);
+        void InserirCliente(DML.Cliente cliente);
+        DML.Cliente ConsultarCliente(string codigoCliente);
     }
 }

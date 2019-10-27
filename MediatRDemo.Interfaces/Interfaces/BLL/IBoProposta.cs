@@ -7,7 +7,7 @@ namespace MediatRDemo.Core.Interfaces
 {
     public interface IBoProposta
     {
-        Proposta ConsultarProposta(string numeroProposta);
-        void CadastrarProposta(Proposta proposta);
+        DML.Proposta ConsultarProposta(string numeroProposta);
+        void CadastrarProposta(DML.Proposta proposta);
     }
 }

@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediatRDemo.Cliente\MediatRDemo.Cliente.csproj" />
-    <ProjectReference Include="..\MediatRDemo.Core\MediatRDemo.Core.csproj" />
+    <ProjectReference Include="..\MediatRDemo.Core\MediatRDemo.Application.csproj" />
     <ProjectReference Include="..\MediatRDemo.Proposta\MediatRDemo.Proposta.csproj" />
   </ItemGroup>
 

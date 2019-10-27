@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using MediatRDemo.Core.Interfaces;
 using MediatRDemo.DML;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MediatRDemo.Core.Commands.Proposta.Queries
 {
@@ -13,18 +15,18 @@ namespace MediatRDemo.Core.Commands.Proposta.Queries
 
         public string NumeroProposta { get; set; }
 
-        class ConsultarPropostaHandler : RequestHandler<ConsultarPropostaQuery, DML.Proposta>
+        public class Handler : IRequestHandler<ConsultarPropostaQuery, DML.Proposta>
         {
             private readonly IBoProposta _boProposta;
 
-            public ConsultarPropostaHandler(IBoProposta boProposta)
+            public Handler(IBoProposta boProposta)
             {
                 _boProposta = boProposta;
             }
 
-            protected override DML.Proposta Handle(ConsultarPropostaQuery request)
+            public Task<DML.Proposta> Handle(ConsultarPropostaQuery request, CancellationToken cancelationToken)
             {
-                return _boProposta.ConsultarProposta(request.NumeroProposta);
+                return Task.FromResult(_boProposta.ConsultarProposta(request.NumeroProposta));
             }
         }
     }

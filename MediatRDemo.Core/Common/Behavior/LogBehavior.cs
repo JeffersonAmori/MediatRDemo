@@ -10,11 +10,11 @@ namespace MediatRDemo.Core.Behavior
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            Console.WriteLine("Executando requisição...");
+            Console.WriteLine($"Executando requisição para {typeof(TRequest)}...");
 
             var response = await next();
 
-            Console.WriteLine("Requisição executada.");
+            Console.WriteLine($"Requisição executada para {typeof(TRequest)}.");
 
             return response;
         }
