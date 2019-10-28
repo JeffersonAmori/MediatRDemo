@@ -25,11 +25,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatRDemo.Contracts", "Me
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{FB30F42C-803B-495B-BDD9-63D250A3EEC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRDemo.DAL", "MediatRDemo.DAL\MediatRDemo.DAL.csproj", "{BE1931EE-F804-4C81-AB68-A37D0A18D83F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatRDemo.DAL", "MediatRDemo.DAL\MediatRDemo.DAL.csproj", "{BE1931EE-F804-4C81-AB68-A37D0A18D83F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0EFDEDA4-8F91-44E4-B707-D9A7CD4AA487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRDemo.Application.Tests", "MediatRDemo.Application.Tests\MediatRDemo.Application.Tests.csproj", "{6B6D7161-399E-46FB-B392-776DF1E72106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatRDemo.Application.Tests", "MediatRDemo.Application.Tests\MediatRDemo.Application.Tests.csproj", "{6B6D7161-399E-46FB-B392-776DF1E72106}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{0EF50715-55D0-4136-9B0B-FC053FAFD0FC}"
+	ProjectSection(SolutionItems) = preProject
+		Mediator.postman_collection.json = Mediator.postman_collection.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +90,7 @@ Global
 		{FB30F42C-803B-495B-BDD9-63D250A3EEC9} = {D517C1F7-B84F-4EBC-8342-1E4D0E4C2CB2}
 		{BE1931EE-F804-4C81-AB68-A37D0A18D83F} = {FB30F42C-803B-495B-BDD9-63D250A3EEC9}
 		{6B6D7161-399E-46FB-B392-776DF1E72106} = {0EFDEDA4-8F91-44E4-B707-D9A7CD4AA487}
+		{0EF50715-55D0-4136-9B0B-FC053FAFD0FC} = {0EFDEDA4-8F91-44E4-B707-D9A7CD4AA487}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A44CF018-C6AA-4884-87D3-A853BB4B1266}

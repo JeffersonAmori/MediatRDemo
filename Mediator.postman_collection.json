@@ -1,0 +1,119 @@
+{
+  "info": {
+    "_postman_id": "bb4d1cb9-8c5d-4338-9475-8582fe56b60d",
+    "name": "Mediator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ConsultarCliente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{url}}/Mediator/ConsultarCliente?codigoCliente=000001",
+          "protocol": "https",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "Mediator",
+            "ConsultarCliente"
+          ],
+          "query": [
+            {
+              "key": "codigoCliente",
+              "value": "000001"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "InserirCliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"CodigoCliente\" : \"000001\",\n\t\"Nome\": \"Cliente Mediator\",\n\t\"Renda\": \"5000\"\n}"
+        },
+        "url": {
+          "raw": "https://{{url}}/Mediator/InserirCliente",
+          "protocol": "https",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "Mediator",
+            "InserirCliente"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ConsultarProposta",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://{{url}}/Mediator/ConsultarProposta?numeroProposta=0000004484",
+          "protocol": "https",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "Mediator",
+            "ConsultarProposta"
+          ],
+          "query": [
+            {
+              "key": "numeroProposta",
+              "value": "0000004484"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CadastrarProposta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"Proposta\": {\n\t\t\"NumeroProposta\" : \"000004484\",\n\t\t\"DataBase\" : \"2019-10-26 12:00:00\",\n\t\t\"Cliente\": {\n\t\t\t\"CodigoCliente\" : \"000001\",\n\t\t\t\"Nome\": \"Cliente Mediator\",\n\t\t\t\"Renda\": \"5000\"\n\t\t}\n\t}\n}"
+        },
+        "url": {
+          "raw": "https://{{url}}/Mediator/CadastrarProposta",
+          "protocol": "https",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "Mediator",
+            "CadastrarProposta"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
