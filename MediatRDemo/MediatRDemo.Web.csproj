@@ -1,17 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\jeffe\source\repos\MediatRDemo\MediatRDemo\MediatRDemo.Web.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.5.0" />
     <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0-rc4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MediatRDemo.Cliente\MediatRDemo.Cliente.csproj" />
     <ProjectReference Include="..\MediatRDemo.Core\MediatRDemo.Application.csproj" />
+    <ProjectReference Include="..\MediatRDemo.DAL\MediatRDemo.DAL.csproj" />
     <ProjectReference Include="..\MediatRDemo.Proposta\MediatRDemo.Proposta.csproj" />
   </ItemGroup>
 
